@@ -57,7 +57,16 @@ func main() {
 	var i=new(int)
 	*i=10
 	fmt.Print(*i)
+
+	// slice 的零值是 `nil`。
+	// 一个 nil 的 slice 的长度和容量是 0。
+	var z []int
+	fmt.Println(z, len(z), cap(z))
+	if z == nil {
+		fmt.Println("nil!")
+	}
 }
 func printSlice(s string, x []int) {
+	// cap 返回容量大小
 	fmt.Printf("%s len=%d cap=%d %v \n",s,len(s),cap(x),x)
 }
