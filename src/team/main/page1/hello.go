@@ -18,7 +18,7 @@ func main() {
     fmt.Println(os.Open("main.go"))
     // 打印网络
     fmt.Println("Or access the network:")
-    fmt.Println(net.Dial("tcp", "www.google.com:80"))
+    fmt.Println(net.Dial("tcp", "www.google.team:80"))
 
     // 打印随机数, 没有设置种子,所以一直都是1
     fmt.Println("My favorite number is", rand.Intn(10))
