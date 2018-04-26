@@ -2,11 +2,12 @@ package main
 
 import (
 	//"team2/io/file"
-	"team2/defer"
+	//"team2/defer"
+	"team2/io/file"
 )
 func main() {
 	//=================file================//
-	//file.File()
+	file.File()
 	//=================defer===============//
-	_defer.Defer()
+	//_defer.Defer()
 }
