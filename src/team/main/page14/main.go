@@ -1,8 +1,8 @@
 package main
 
 import (
-	"runtime"
 	"fmt"
+	"runtime"
 	"time"
 )
 
@@ -23,7 +23,6 @@ func main() {
 		fmt.Printf("%s.", os)
 	}
 
-
 	fmt.Println("When's Saturday?")
 	// Weekday函数返回一个int值,但是执行打印的时候他会在time类中的一个days中去找对应的字符串,给人以假象
 	today := time.Now().Weekday()
@@ -40,7 +39,6 @@ func main() {
 		fmt.Println("Too far away.")
 	}
 
-
 	t := time.Now()
 	fmt.Println(t)
 	// 没有条件的 switch 同 `switch true` 一样。
@@ -51,6 +49,6 @@ func main() {
 	case t.Hour() < 17:
 		fmt.Println("Good afternoon.")
 	default:
-		fmt.Println("Good evening.")
+		fmt.Println("Good evening！！！")
 	}
 }
