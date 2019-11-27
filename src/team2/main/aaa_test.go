@@ -12,6 +12,7 @@ package main
 import (
 	"bytes"
 	"encoding/base64"
+	"fmt"
 	"github.com/afocus/captcha"
 	"image/color"
 	"image/png"
@@ -29,7 +30,7 @@ func BenchmarkXXX(b *testing.B) {
 	// 设置验证码大小
 	cap.SetSize(128, 64)
 	// 设置干扰强度
-	cap.SetDisturbance(captcha.MEDIUM)
+	cap.SetDisturbance(8)
 	// 设置前景色 可以多个 随机替换文字颜色 默认黑色
 	cap.SetFrontColor(color.RGBA{255, 255, 255, 255})
 	// 设置背景色 可以多个 随机替换背景色 默认白色
@@ -40,5 +41,5 @@ func BenchmarkXXX(b *testing.B) {
 	emptyBuff := bytes.NewBuffer(nil) //开辟一个新的空buff
 	png.Encode(emptyBuff, img)        //img写入到buff
 	emptyBuff.Bytes()
-	base64.StdEncoding.EncodeToString(emptyBuff.Bytes()) //buff转成base64
+	fmt.Println(base64.StdEncoding.EncodeToString(emptyBuff.Bytes())) //buff转成base64
 }
