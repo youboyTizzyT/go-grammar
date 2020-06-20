@@ -1,0 +1,20 @@
+syntax = "proto3";
+// 定义包名
+package test;
+
+// 可以定义多个服务，每个服务内可以定义多个接口
+service Waiter {
+    rpc Stream (stream Req) returns (stream Res); // 透传消息, 双向流
+    rpc Once (Req) returns (Res);
+}
+
+// 定义 Req 消息结构
+message Req {
+    // 类型 字段 = 标识号
+    string jsonStr = 1;
+}
+
+// 定义 Res 消息结构
+message Res {
+    string backJson = 1;
+}
