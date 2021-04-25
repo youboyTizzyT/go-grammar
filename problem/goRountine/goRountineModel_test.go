@@ -16,10 +16,11 @@ func BenchmarkThread6(t *testing.B)  { forMain(t, 6) }
 func BenchmarkThread8(t *testing.B)  { forMain(t, 8) }
 func BenchmarkThread12(t *testing.B) { forMain(t, 12) }
 func BenchmarkThread16(t *testing.B) { forMain(t, 16) }
+func BenchmarkThread20(t *testing.B) { forMain(t, 20) }
 
 func forMain(t *testing.B, int2 int) {
 	for i := 0; i < int2; i++ {
-		go forRun(int32(t.N))
+		go forRun(int32(3000))
 	}
 	time.Sleep(1 * time.Second)
 	wg.Wait()
