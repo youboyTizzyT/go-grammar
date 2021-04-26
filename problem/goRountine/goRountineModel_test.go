@@ -1,6 +1,8 @@
 package myTest
 
 import (
+	"fmt"
+	"runtime"
 	"sort"
 	"sync"
 	"testing"
@@ -9,18 +11,39 @@ import (
 
 var wg = sync.WaitGroup{}
 
-func BenchmarkThread1(t *testing.B)  { forMain(t, 1) }
-func BenchmarkThread2(t *testing.B)  { forMain(t, 2) }
-func BenchmarkThread4(t *testing.B)  { forMain(t, 4) }
-func BenchmarkThread6(t *testing.B)  { forMain(t, 6) }
-func BenchmarkThread8(t *testing.B)  { forMain(t, 8) }
-func BenchmarkThread12(t *testing.B) { forMain(t, 12) }
-func BenchmarkThread16(t *testing.B) { forMain(t, 16) }
-func BenchmarkThread20(t *testing.B) { forMain(t, 20) }
+func BenchmarkThread1(t *testing.B) {
+	forMain(t, 1)
+}
+func BenchmarkThread2(t *testing.B) {
+	forMain(t, 2)
+}
+func BenchmarkThread4(t *testing.B) {
+	forMain(t, 4)
+}
+func BenchmarkThread6(t *testing.B) {
+	forMain(t, 6)
+}
+func BenchmarkThread8(t *testing.B) {
+	forMain(t, 8)
+}
+func BenchmarkThread12(t *testing.B) {
+	forMain(t, 12)
+}
+func BenchmarkThread16(t *testing.B) {
+	forMain(t, 16)
+}
 
+func TestMain(m *testing.M) {
+	runtime.GOMAXPROCS(16)
+	currentcpu := runtime.GOMAXPROCS(-1)
+	maxcpu := runtime.NumCPU()
+	runtime.NumCPU()
+	fmt.Println("开始", currentcpu, maxcpu)
+	m.Run()
+}
 func forMain(t *testing.B, int2 int) {
 	for i := 0; i < int2; i++ {
-		go forRun(int32(3000))
+		go forRun(int32(1000))
 	}
 	time.Sleep(1 * time.Second)
 	wg.Wait()
