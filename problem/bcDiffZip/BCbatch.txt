@@ -1,0 +1,3 @@
+text-report layout:interleaved   &
+options:display-mismatches &
+output-to:"report.html" output-options:print-color,wrap-word,html-color "C:\Users\XINDONG\Documents\WXWork\1688850732477545\Cache\File\2021-05\sdata (11).zip\data_temp\19_GouHuoUGS_390003\csv_temp\affix_combine_temp.csv" "C:\Users\XINDONG\Documents\WXWork\1688850732477545\Cache\File\2021-05\sdata (10).zip\Out\218_GouHuoUGS_387170\csv_temp\affix_combine_temp.csv"
