@@ -41,4 +41,5 @@ func permute(nums []int) [][]int {
 	for i := 0; i < getNum(l); i++ {
 
 	}
+	return nil
 }
