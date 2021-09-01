@@ -19,7 +19,7 @@ import (
 )
 
 func main() {
-	conn, err := grpc.DialContext(ctx, "127.0.0.1:8028", grpc.WithInsecure())
+	conn, err := grpc.DialContext(context.Background(), "127.0.0.1:8028", grpc.WithInsecure())
 	fmt.Println(conn.GetState())
 	if err != nil {
 		log.Fatalf("did not connect: %v", err)
